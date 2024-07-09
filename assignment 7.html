@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Qualifications</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+ol {
+    list-style-type: decimal;
+    padding: 0;
+}
+
+li {
+    color: #333;
+    background-color: #e0e0e0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qualifications:</h1>
+        <ol id="qualification-list"></ol>
+    </div>
+
+    <script>
+        
+const qualifications = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "M. Phil.", "PhD"];
+
+
+console.log("Qualifications array:", qualifications);
+
+function displayQualifications(qualifications) {
+    const qualificationList = document.getElementById("qualification-list");
+    qualificationList.innerHTML = ""; 
+    qualifications.forEach(qualification => {
+        const listItem = document.createElement("li");
+        listItem.textContent = qualification;
+        qualificationList.appendChild(listItem);
+    });
+}
+
+displayQualifications(qualifications);
+
+    </script>
+</body>
+</html>

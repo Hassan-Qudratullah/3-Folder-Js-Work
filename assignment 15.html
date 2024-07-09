@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Manufacturers Dropdown</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  select {
+    padding: 5px;
+    width: 200px;
+  }
+</style>
+</head>
+<body>
+<h2>Phone Manufacturers Dropdown</h2>
+
+<script>
+  var manufacturers = ["Apple", "Samsung", "Motorola", "Nokia", "Sony", "Haier"];
+
+  document.write("<label for='manufacturerSelect'>Select Manufacturer:</label>");
+  document.write("<select id='manufacturerSelect'>");
+  manufacturers.forEach(function(manufacturer) {
+    document.write("<option value='" + manufacturer + "'>" + manufacturer + "</option>");
+  });
+  document.write("</select>");
+</script>
+
+</body>
+</html>

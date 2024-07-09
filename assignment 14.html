@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIFO Stack</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  button{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<h2>LIFO Stack</h2>
+
+<div>
+  <input type="text" id="inputValue" placeholder="Enter a value">
+  <button onclick="pushValue()">Push</button>
+</div>
+
+<div>
+  <button onclick="popValue()">Pop</button>
+</div>
+
+<div id="stackContents"></div>
+
+<script>
+  var stack = [];
+
+  function pushValue() {
+    var inputValue = document.getElementById("inputValue").value;
+    if (inputValue !== "") {
+      stack.push(inputValue);
+      updateStackDisplay();
+    }
+  }
+
+  function popValue() {
+    if (stack.length > 0) {
+      var poppedItem = stack.pop();
+      updateStackDisplay();
+      alert("Popped item: " + poppedItem);
+    } else {
+      alert("Stack is empty");
+    }
+  }
+
+  function updateStackDisplay() {
+    var stackContents = document.getElementById("stackContents");
+    stackContents.innerHTML = "<b>Stack Contents:</b><br>";
+    for (var i = stack.length - 1; i >= 0; i--) {
+      stackContents.innerHTML += (stack.length - i) + ". " + stack[i] + "<br>";
+    }
+  }
+</script>
+
+</body>
+</html>

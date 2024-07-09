@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Array Copy</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #cities-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  #cities-list li {
+    margin-bottom: 5px;
+  }
+  #selected-cities-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  #selected-cities-list li {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+<h2>City Array Copy</h2>
+
+<h3>Cities</h3>
+<ul id="cities-list"></ul>
+
+<h3>Selected Cities</h3>
+<ul id="selected-cities-list"></ul>
+
+<script>
+  
+  var cities = ["New York", "London", "Paris", "Karachi", "Sydney"];
+
+ 
+  var citiesList = document.getElementById("cities-list");
+  cities.forEach(function(city) {
+    var listItem = document.createElement("li");
+    listItem.textContent = city;
+    citiesList.appendChild(listItem);
+  });
+
+  
+  var selectedCities = cities.slice(0, 3);
+
+  
+  var selectedCitiesList = document.getElementById("selected-cities-list");
+  selectedCities.forEach(function(city) {
+    var listItem = document.createElement("li");
+    listItem.textContent = city;
+    selectedCitiesList.appendChild(listItem);
+  });
+</script>
+
+</body>
+</html>

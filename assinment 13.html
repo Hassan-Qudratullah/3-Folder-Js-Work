@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIFO Queue</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  button{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<h2>FIFO Queue</h2>
+
+<div>
+  <input type="text" id="inputValue" placeholder="Enter a value">
+  <button onclick="enqueue()">Enqueue</button>
+</div>
+
+<div>
+  <button onclick="dequeue()">Dequeue</button>
+</div>
+
+<div id="queueContents"></div>
+
+<script>
+  var queue = [];
+
+  function enqueue() {
+    var inputValue = document.getElementById("inputValue").value;
+    if (inputValue !== "") {
+      queue.push(inputValue);
+      updateQueueDisplay();
+    }
+  }
+
+  function dequeue() {
+    if (queue.length > 0) {
+      var dequeuedItem = queue.shift();
+      updateQueueDisplay();
+      alert("Dequeued item: " + dequeuedItem);
+    } else {
+      alert("Queue is empty");
+    }
+  }
+
+  function updateQueueDisplay() {
+    var queueContents = document.getElementById("queueContents");
+    queueContents.innerHTML = "<b>Queue Contents:</b><br>";
+    queue.forEach(function(item, index) {
+      queueContents.innerHTML += (index + 1) + ". " + item + "<br>";
+    });
+  }
+</script>
+
+</body>
+</html>

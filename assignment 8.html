@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Scores and Percentages</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+.result-item {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Scores and Percentages</h1>
+        <div id="results"></div>
+    </div>
+
+    <script>
+      
+const studentNames = ["Ahad", "Safi", "Farhan"];
+
+
+const studentScores = [320, 290, 480];
+
+
+const totalMarks = 500;
+
+function calculatePercentage(score, total) {
+    return (score / total) * 100;
+}
+
+
+function displayResults(names, scores, total) {
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = ""; 
+
+    names.forEach((name, index) => {
+        const score = scores[index];
+        const percentage = calculatePercentage(score, total).toFixed(2);
+        const resultItem = document.createElement("div");
+        resultItem.classList.add("result-item");
+        resultItem.textContent = `Score of ${name} is ${score}. Percentage: ${percentage}%`;
+        resultsDiv.appendChild(resultItem);
+    });
+}
+
+
+displayResults(studentNames, studentScores, totalMarks);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Array Manipulation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #color-array {
+    margin-bottom: 10px;
+  }
+  #result {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+<div id="result"></div>
+<script>
+  var colors = ["red", "blue", "green", "yellow"];
+
+ 
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Original Array:</b> " + colors.join(", ") + "</div>";
+
+ 
+  var colorToAddAtBeginning = prompt("Enter a color to add to the beginning:");
+  colors.unshift(colorToAddAtBeginning);
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Adding Color at Beginning:</b> " + colors.join(", ") + "</div>";
+
+  var colorToAddAtEnd = prompt("Enter a color to add to the end:");
+  colors.push(colorToAddAtEnd);
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Adding Color at End:</b> " + colors.join(", ") + "</div>";
+
+
+  colors.unshift("orange", "purple");
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Adding Two More Colors at Beginning:</b> " + colors.join(", ") + "</div>";
+
+
+  colors.shift();
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Deleting First Color:</b> " + colors.join(", ") + "</div>";
+
+  colors.pop();
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Deleting Last Color:</b> " + colors.join(", ") + "</div>";
+
+
+  var indexToAddColor = prompt("Enter the index to add color:");
+  var colorToAdd = prompt("Enter the color to add:");
+  colors.splice(indexToAddColor, 0, colorToAdd);
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Adding Color at Desired Index:</b> " + colors.join(", ") + "</div>";
+
+  var indexToRemove = prompt("Enter the index to remove color(s) from:");
+  var numToRemove = prompt("Enter the number of colors to remove:");
+  colors.splice(indexToRemove, numToRemove);
+
+  
+  document.getElementById("result").innerHTML += "<div id='color-array'><b>Array After Removing Color(s) at Desired Index:</b> " + colors.join(", ") + "</div>";
+</script>
+</body>
+</html>

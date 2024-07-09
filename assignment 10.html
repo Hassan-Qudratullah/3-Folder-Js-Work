@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Scores Sorting</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #score-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  #score-list li {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+<h2>Student Scores Sorting</h2>
+<p>Enter student scores separated by commas:</p>
+<input type="text" id="scoresInput" placeholder="Enter scores">
+<button onclick="sortScores()">Sort</button>
+
+<ul id="score-list"></ul>
+
+<script>
+  function sortScores() {
+    var scoresInput = document.getElementById("scoresInput").value;
+    var scoresArray = scoresInput.split(',').map(Number); 
+    scoresArray.sort(function(a, b){return a - b}); 
+    displaySortedScores(scoresArray);
+  }
+
+  function displaySortedScores(scores) {
+    var scoreList = document.getElementById("score-list");
+    scoreList.innerHTML = "";
+
+    scores.forEach(function(score) {
+      var listItem = document.createElement("li");
+      listItem.textContent = score;
+      scoreList.appendChild(listItem);
+    });
+  }
+</script>
+</body>
+</html>
